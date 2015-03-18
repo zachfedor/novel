@@ -1,0 +1,352 @@
+/***************************************
+
+novel.css
+
+author - zach fedor
+date - 06-26-14
+version - 1.0
+
+for portfolio site - zachfedor.com
+
+description - a page taken straight
+out of a dusty leather bound volume
+inspired by my love of the written word
+
+***************************************/
+
+/* global 
+***************************************/
+@import 'normalize.css';
+    /* https://github.com/necolas */
+
+*, *:before, *:after {
+    /* add border-box to all elements */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    /* Small screens (default) */
+    font-size: 100%;
+    height: 100%;
+    font-family: 'Merriweather', serif;
+    background: #ffffff;
+    color: #3D464D;
+}
+
+body {
+    height: 100%;
+    text-align: left;
+}
+ 
+@media (min-width: 40rem) {
+    /* Medium screens (640px) */
+    html {
+        font-size: 112%;
+    }
+}
+
+@media (min-width: 64rem) {
+    /* Large screens (1024px) */ 
+    html {
+        font-size: 120%;
+    }
+}
+
+a{
+    color: #3D464D;
+}
+
+a:hover, a:active, a:focus {
+    color: #368DDE;
+}
+
+/* layout
+***************************************/
+.row {
+    margin: 0 auto;
+    max-width: 48rem;
+    width: 90%;
+}
+
+@media (min-width: 40rem) {
+    /* sets responsive grid layout, https://www.adamkaplan.me/grid/ */
+    .row {
+        width: 75%;
+        padding: 0 1rem;
+    }
+
+    .column {
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .column.full {
+        width: 100%;
+    }
+    .column.two-thirds {
+        width: 66.7%;
+    }
+    .column.half {
+        width: 50%;
+    }
+    .column.third {
+        width: 33.3%;
+    }
+    .column.fourth {
+        width: 25%;
+    }
+    /* for right-side elements that should be on top on smaller screens */
+    .flow-opposite {
+        float: right;
+    }
+    /* changes alignment of left/right aligned objects to center align */
+    .rightAlign {
+        text-align: right;
+    }
+
+    .leftAlign {
+        text-align: left;
+    }
+}
+
+.clearfix:before, .clearfix:after {
+    /* fixing clearing issues */
+    content: " ";
+    display: table;
+}
+ 
+.clearfix:after {
+    clear: both;
+}
+ 
+.clearfix {
+    *zoom: 1;
+}
+
+/* header
+***************************************/
+header {
+    background: #ffffff;
+    font-family: 'IM Fell English', serif;
+    letter-spacing: 2;
+    z-index: 5;
+}
+
+header a {
+    text-decoration: none;
+    color: #7F858C;
+}
+
+.banner {
+    border-bottom: 1px solid #7F858C;
+    padding: 0;
+}
+
+.bannerTitle {
+    display: block;
+    padding: 2rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+nav {
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+}
+
+nav a + a {
+    margin-left: 1rem;
+}
+
+@media (min-width: 40rem) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* content
+***************************************/
+main {
+    padding-top: 4rem;
+}
+
+@media (min-width: 40rem) {
+    main {
+        margin-top: 6.2rem;
+    }
+
+    article {
+        margin-left: 35%;
+    }
+}
+
+/*home page*/
+
+.quoteBlock {
+    font-family: 'IM Fell English', serif;
+}
+
+.quoteContent {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 2em;
+    line-height: 180%;
+}
+
+.quoteAuthor {
+    margin-bottom: 4em;
+    text-align: left;
+    margin-left: 50%;
+}
+
+#hideAuthor, #hideContent {
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+/*projects page*/
+
+.projectTitle {
+    font-family: 'IM Fell English', serif;
+    margin-top: 0;
+}
+
+.projectImage {
+    border: 1px solid #3D464D;
+    margin: 0 auto 20px;
+}
+
+.projectImage:hover {
+    border-color: #368DDE;
+}
+
+.projectMeta {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    line-height: 180%;
+}
+
+.projectDescription {
+    margin-bottom: 6em;
+    text-align: left;
+    line-height: 180%;
+}
+
+@media (min-width: 50rem) {
+    .projectMeta {
+        text-align: left;
+    }
+
+    .projectImage {
+        margin: 0 0 20px 40px;
+        float: right;
+    }
+}
+
+/*contact page*/
+
+#contactBlock input, #contactBlock textarea {
+    padding: 5px;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    margin: 0px 0px 20px 0px;
+    border: 1px solid #3D464D; /*#3D464D;*/
+}
+
+#contactBlock textarea {
+    height: 90px;
+}
+
+#contactBlock textarea:focus, #contactBlock input:focus {
+    border: 1px solid #368DDE;
+}
+
+#contactBlock input.submit-button {
+    width: 100px;
+    margin: 0 auto 3em;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3em;
+}
+
+label {
+    float: left;
+    text-align: left;
+    margin-right: 15px;
+    width: 100px;
+    padding-top: 5px;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3em;
+}
+
+.contactThanks {
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.contactError {
+    color: #368DDE;
+    font-size: 1.3em;
+    font-family: 'IM Fell English', serif;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/*about page*/
+
+.aboutQuote p {
+    margin-bottom: 0.5em;
+}
+
+.aboutQuote span {
+    margin-bottom: 2em;
+}
+
+.aboutTitle {
+    font-family: 'IM Fell English', serif;
+}
+
+.aboutPar {
+    margin: 0 0 1em 0;
+    line-height: 180%;
+    text-align: left;
+}
+
+.aboutImage {
+    border: 2px solid #3D464D;
+    margin: 0 auto 20px;
+}
+
+.aboutImage:hover {
+    border-color: #368DDE;
+}
+
+@media (min-width: 40rem) {
+    .aboutImage {
+        margin: 0px 1em 1em 0px;
+        float: left;
+    }
+}
+
+/* footer
+***************************************/
+footer {
+    font-family: 'IM Fell English', serif;
+    color: #7F858C;
+}
+
+footer div {
+    border-top: 1px solid #7F858C;
+    border-bottom: 1px solid #7F858C;
+}

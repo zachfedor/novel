@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>cypher</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="Cypher" />
+
+    <style>
+/*layout*/
+        body {
+            background: #313131;
+            font-family: courier, monospace;
+            font-size: 1.1em;
+            line-height: 140%;
+        }
+        #wrapper {
+            width: 50%;
+            min-width: 300px;
+            border: 1px solid #cccccc;
+            margin: 20% auto;
+            box-shadow: 0 0 100px #212121;
+        }
+/*title*/
+        span {
+            color: #cccccc;
+            font-weight: bold;
+            padding: 10px;
+            margin: 0 44px 0 0;
+            position: relative;
+            top: -15px;
+            left: 65%;
+            background-color: #313131;
+            border: 1px solid #cccccc;
+        }
+/*input*/
+        textarea {
+            display: block;
+            width: 85%;
+            height: 65px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #313131;
+            border: 1px solid #cccccc;
+            color: #cccccc;
+            resize: vertical;
+        }
+        #buttonWrap {
+            width: 175px;
+            margin: 0 auto;
+        }
+        button {
+            background: #313131;
+            color: #cccccc;
+            border: 1px solid #cccccc;
+            padding: 10px;
+            margin: 0;
+        }
+        button:hover, textarea:hover {
+            box-shadow: 0 0 5px #cccccc;
+        }
+        #en {
+            margin-right: 20px;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        function encrypt() {
+            var i = document.getElementById('in').value;
+
+            i = i.replace(/a/g,"~~~");
+            i = i.replace(/b/g,"%%%");
+            i = i.replace(/c/g,";;;");
+            i = i.replace(/d/g,"a");
+            i = i.replace(/e/g,"b");
+            i = i.replace(/f/g,"c");
+            i = i.replace(/g/g,"e");
+            i = i.replace(/h/g,"f");
+            i = i.replace(/i/g,"g");
+            i = i.replace(/j/g,"h");
+            i = i.replace(/k/g,"i");
+            i = i.replace(/l/g,"j");
+            i = i.replace(/m/g,"k");
+            i = i.replace(/n/g,"l");
+            i = i.replace(/o/g,"m");
+            i = i.replace(/p/g,"n");
+            i = i.replace(/q/g,"p");
+            i = i.replace(/r/g,"q");
+            i = i.replace(/s/g,"r");
+            i = i.replace(/t/g,"s");
+            i = i.replace(/u/g,"t");
+            i = i.replace(/v/g,"u");
+            i = i.replace(/w/g,"v");
+            i = i.replace(/x/g,"w");
+            i = i.replace(/y/g,"x");
+            i = i.replace(/~~~/g,"o");
+            i = i.replace(/%%%/g,"d");
+            i = i.replace(/;;;/g,"y");
+
+            i = i.replace(/A/g,"```");
+            i = i.replace(/B/g,"@@@");
+            i = i.replace(/C/g,">>>");
+            i = i.replace(/D/g,"A");
+            i = i.replace(/E/g,"B");
+            i = i.replace(/F/g,"C");
+            i = i.replace(/G/g,"E");
+            i = i.replace(/H/g,"F");
+            i = i.replace(/I/g,"G");
+            i = i.replace(/J/g,"H");
+            i = i.replace(/K/g,"I");
+            i = i.replace(/L/g,"J");
+            i = i.replace(/M/g,"K");
+            i = i.replace(/N/g,"L");
+            i = i.replace(/O/g,"M");
+            i = i.replace(/P/g,"N");
+            i = i.replace(/Q/g,"P");
+            i = i.replace(/R/g,"Q");
+            i = i.replace(/S/g,"R");
+            i = i.replace(/T/g,"S");
+            i = i.replace(/U/g,"T");
+            i = i.replace(/V/g,"U");
+            i = i.replace(/W/g,"V");
+            i = i.replace(/X/g,"W");
+            i = i.replace(/Y/g,"X");
+            i = i.replace(/```/g,"O");
+            i = i.replace(/@@@/g,"D");
+            i = i.replace(/>>>/g,"Y");
+
+            document.getElementById('out').value = i;
+        }
+
+        function unencrypt() {
+            var i = document.getElementById('in').value;
+
+            i = i.replace(/y/g,"~~~");
+            i = i.replace(/d/g,"%%%");
+            i = i.replace(/o/g,";;;");
+            i = i.replace(/x/g,"y");
+            i = i.replace(/w/g,"x");
+            i = i.replace(/v/g,"w");
+            i = i.replace(/u/g,"v");
+            i = i.replace(/t/g,"u");
+            i = i.replace(/s/g,"t");
+            i = i.replace(/r/g,"s");
+            i = i.replace(/q/g,"r");
+            i = i.replace(/p/g,"q");
+            i = i.replace(/n/g,"p");
+            i = i.replace(/m/g,"o");
+            i = i.replace(/l/g,"n");
+            i = i.replace(/k/g,"m");
+            i = i.replace(/j/g,"l");
+            i = i.replace(/i/g,"k");
+            i = i.replace(/h/g,"j");
+            i = i.replace(/g/g,"i");
+            i = i.replace(/f/g,"h");
+            i = i.replace(/e/g,"g");
+            i = i.replace(/c/g,"f");
+            i = i.replace(/b/g,"e");
+            i = i.replace(/a/g,"d");
+            i = i.replace(/~~~/g,"c");
+            i = i.replace(/%%%/g,"b");
+            i = i.replace(/;;;/g,"a");
+
+            i = i.replace(/Y/g,">>>");
+            i = i.replace(/D/g,"@@@");
+            i = i.replace(/O/g,"```");
+            i = i.replace(/X/g,"Y");
+            i = i.replace(/W/g,"X");
+            i = i.replace(/V/g,"W");
+            i = i.replace(/U/g,"V");
+            i = i.replace(/T/g,"U");
+            i = i.replace(/S/g,"T");
+            i = i.replace(/R/g,"S");
+            i = i.replace(/Q/g,"R");
+            i = i.replace(/P/g,"Q");
+            i = i.replace(/N/g,"P");
+            i = i.replace(/M/g,"O");
+            i = i.replace(/L/g,"N");
+            i = i.replace(/K/g,"M");
+            i = i.replace(/J/g,"L");
+            i = i.replace(/I/g,"K");
+            i = i.replace(/H/g,"J");
+            i = i.replace(/G/g,"I");
+            i = i.replace(/F/g,"H");
+            i = i.replace(/E/g,"G");
+            i = i.replace(/C/g,"F");
+            i = i.replace(/B/g,"E");
+            i = i.replace(/A/g,"D");
+            i = i.replace(/>>>/g,"C");
+            i = i.replace(/@@@/g,"B");
+            i = i.replace(/```/g,"A");
+
+            document.getElementById('out').value = i;
+        }
+
+// placeholder(x) runs onfocus and onblur for each textarea ressetting the placeholder values or clearing them in prep for use
+        function placehold(x) {
+            var i = document.getElementById('in');
+            var o = document.getElementById('out');
+
+            if (x == 10 && i.value == '') {
+                i.value = 'input';
+            } else if (x == 11 && i.value == 'input') {
+                            i.value = '';
+            } else if (x == 20 && o.value == '') {
+                o.value = 'output';
+            } else if (x == 21 && o.value == 'output') {
+                o.value = '';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <span>cypher</span>
+
+        <textarea id="in" class="Ta" name="input" onfocus="placehold(11);" onblur="placehold(10);">input</textarea>
+
+        <div id="buttonWrap">
+            <button id="en" onclick="encrypt();">encrypt</button>
+            <button id="un" onclick="unencrypt();">unencrypt</button>
+        </div>
+
+        <textarea id="out" class="Ta" name="output" onfocus="placehold(21);" onblur="placehold(20);">output</textarea>
+    </div>
+</body>
+
+</html>

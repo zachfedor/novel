@@ -1,0 +1,490 @@
+body {
+	background-color: #222222;
+	color: #333333;
+	font-family: ubuntu, serif;
+	text-align: center;
+	overflow-y: scroll;
+}
+
+#wrapper {
+	margin: 7em auto 0;
+	width: 970px;
+	height: 400px;
+	background: #222222 url('images/NewBackground3.png') 0 960px;
+	background-position: left top;
+	background-repeat: no-repeat;
+
+}
+
+a {
+	color: #ffb166;
+}
+
+a:visited {
+	color: #0b2f5f;
+}
+
+a:hover {
+	color: #ff9934;
+	text-shadow: 0px 0px 2px #222222;
+}
+
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+background-color: #222222;
+
+}
+
+::-webkit-scrollbar-thumb {
+min-height: .8em;
+min-width: .8em;
+background-color: #ffb166;
+-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.10),inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+
+#site, #port, #about, #serv, #cont, #blog, #welcome {
+	position: relative;
+	box-shadow: 5px 5px 10px 1px #000000;
+	cursor: pointer;
+}
+
+#site:hover, #port:hover, #about:hover, #serv:hover, #cont:hover, #blog:hover, #welcome:hover {
+        -moz-box-shadow: 0px 0px 15px 1px #bbbbbb;
+        -webkit-box-shadow: 0px 0px 15px 1px #bbbbbb;
+	box-shadow: 0px 0px 15px 1px #bbbbbb;
+}
+
+#portClick, #aboutClick, #servClick, #contClick, #blogClick {
+	position: relative;
+}
+
+#siteClick1, #siteClick2, #siteClick3, #site1, #siteClick4, #site2, #portClick1, #portClick2, #portClick3, #about1, #about2, #about3, #about4, #about5, #about6, #about7, #element1, #serv1, #serv2, #serv3 {
+	position: relative;
+	overflow: hidden;
+	/*display: none;*/
+	}
+
+#site {
+	top: 130px;
+	left: 158px;
+	width: 219px;
+	height: 39px;
+	background: #ffb166 url(images/zfSprite.png) 0 -100px;
+}
+
+#site:hover {
+	background: #ffb166 url(images/zfSprite-hover.png) 0 -100px;
+}
+
+#siteClick1 {
+	top: -811px;
+	left: 377px;
+	width: 0px;
+	height: 39px;
+	background-color: #ffb166;
+	}
+	
+#siteClick2 {
+	top: -620px;
+	left: 460px;
+	width: 48px;
+	height: 0px;
+	background-color: #ffb166;
+	}
+	
+#siteClick3 {
+	top: -1450px;
+	left: 389px;
+	width: 190px;
+	height: 0px;
+	background-color: #ffb166;
+	}
+	
+#siteClick4 {
+	top: -1400px;
+	left: 389px;
+	width: 190px;
+	height: 0px;
+	background-color: #ffb166;
+	}
+	
+#site1, #site2 {
+	margin: 5px;
+	}
+	
+#site3 {
+	position: relative;
+	top: 455px;
+	}
+
+#port {
+	top: 15px;
+	left: 898px;
+	width: 55px;
+	height: 346px;
+	background: url(images/zfSprite.png) -219px 0px;
+}
+	
+#port:hover {
+	background: url(images/zfSprite-hover.png) -219px 0px;
+}
+
+#portClick {
+	top: -590px;
+	left: 898px;
+	width: 55px;
+	height: 0px;
+	background-color: #3ea2ee;
+	overflow: hidden;
+}
+
+#portClick1 {
+	top: -645px;
+	left: 900px;
+	width: 0px;
+	height: 55px;
+	background-color: #3ea2ee;
+}
+
+#portNav {
+	font-size: 25px;
+	margin: 0 0 0 35px;
+	padding: 5px 0 0 0;
+	cursor: default;
+}
+
+.portNavLi {
+	display: inline;
+	margin: 0 12px;
+	padding: 0;
+	cursor: pointer;
+}
+
+#portNav1 {
+	color: rgba(255, 255, 255, 1);
+}
+
+#portNav2, #portNav3 {
+	color: rgba(255, 255, 255, 0.50);
+}
+
+#portClick2 {
+	top: -655px;
+	left: 400px;
+	width: 55px;
+	height: 0px;
+	background-color: #3ea2ee;
+}
+
+#portClick3 {
+	top: -3615px;
+	left: 60px;
+	height: 0px;
+	width: 736px;
+	margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border: none;
+	padding: 0;
+	margin-top: 10px;
+	color: #cccccc;
+	font-size: 1.2em;
+	}
+
+.left, .right {
+	width: 330px;
+	height: 200px;
+	padding: 0 15px;
+	margin: 0;
+	}
+	
+.center {
+	width: 50px;
+	margin: 0;
+	padding: 0 13px;
+	}
+	
+.left img, .right img {
+	box-shadow: 5px 5px 10px 1px #000000;
+	}
+	
+.left img:hover, .right img:hover {
+	box-shadow: 0px 0px 15px 1px #bbbbbb;
+	}
+	
+#about {
+	top: -385px;
+	left: 627px;
+	width: 101px;
+	height: 91px;
+	background: url(images/zfSprite.png) 0px -139px;
+}
+	
+#about:hover {
+	background: url(images/zfSprite-hover.png) 0px -139px;
+}
+
+#about1 {
+	/*position: relative;
+	top: -850px;
+	margin: 0 auto 100px;
+	width: 800px;
+	display: none;
+	color: #999999;*/
+	top: -699px;
+	left: 36px;
+	width: 52px;
+	height: 0px;
+	background-color: #ff9934;
+}
+
+#about2 {
+	top: -720px;
+	left: 36px;
+	width: 0px;
+	height: 21px;
+	background-color: #ff9934;
+	}
+	
+#about3 {
+	top: -720px;
+	left: 850px;
+	width: 50px;
+	height: 0px;
+	background: url(images/aboutSprite.png) #ff9934 -200px 0px;
+	}
+	
+#about3:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/aboutSprite-hover.png) #ff9934 -200px 0px;
+	}
+	
+#about4 {
+	top: -845px;
+	left: 750px;
+	width: 50px;
+	height: 0px;
+	background: url(images/aboutSprite.png) #ff9934 -100px 0px;
+	}
+	
+#about4:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/aboutSprite-hover.png) #ff9934 -100px 0px;
+	}
+
+#about5 {
+	top: -970px;
+	left: 650px;
+	width: 50px;
+	height: 0px;
+	background: url(images/aboutSprite.png) #ff9934 -150px 0px;
+	}
+	
+#about5:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/aboutSprite-hover.png) #ff9934 -150px 0px;
+	}
+
+#about6 {
+	top: -1095px;
+	left: 550px;
+	width: 50px;
+	height: 0px;
+	background: url(images/aboutSprite.png) #ff9934 -50px 0px;
+	}
+
+#about6:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/aboutSprite-hover.png) #ff9934 -50px 0px;
+	}
+
+#about7 {
+	top: -1220px;
+	left: 450px;
+	width: 50px;
+	height: 0px;
+	background: url(images/aboutSprite.png) #ff9934 0px 0px;
+	}
+	
+#about7:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/aboutSprite-hover.png) #ff9934 0px 0px;
+	}
+	
+#about3:hover, #about4:hover, #about5:hover, #about6:hover, #about7:hover {
+	box-shadow: 0px 5px 12px 1px #bbbbbb;
+	}
+	
+#element1 {
+	top: -1300px;
+	left: 70px;
+	width: 300px;
+	height: 0px;
+	background-color: #fff;
+	text-align: left;
+	padding-right: 30px;
+}
+
+#element1 li {
+	list-style-type: none;
+}	
+	
+#list {
+	text-align: left;
+}
+	
+#about1 a {
+	color: #3ea2ee;
+}
+	
+#about1 a:hover {
+	color: #ff9934;
+}
+	
+.divider {
+	margin: 5px 20px;
+}
+	
+#serv {
+	top: -191px;
+	left: 627px;
+	width: 101px;
+	height: 115px;
+	background: url(images/zfSprite.png) -101px -139px;
+}
+	
+#serv:hover {
+	background: url(images/zfSprite-hover.png) -101px -139px;
+}
+
+#serv1 {
+	top: -600px;
+	left: 100px;
+	width: 200px;
+	height: 0px;
+	background-color: #ff9934;
+	}
+
+#serv2 {
+	top: -600px;
+	left: 400px;
+	width: 200px;
+	height: 0px;
+	background-color: #ff9934;
+	}
+
+#serv3 {
+	top: -600px;
+	left: 700px;
+	width: 200px;
+	height: 0px;
+	background-color: #ff9934;
+	}
+	
+#cont {
+	top: -412px;
+	left: 553px;
+	width: 198px;
+	height: 82px;
+	background: url(images/zfSprite.png) 0 -254px;
+}
+	
+#cont:hover {
+	background: url(images/zfSprite-hover.png) 0 -254px;
+}
+
+#contLink {
+	width: 198px;
+	height: 82px;
+}
+	
+#blog {
+	top: -399px;
+	left: 183px;
+	width: 86px;
+	height: 106px;
+	background: url(images/zfSprite.png) 0 -336px;
+}
+	
+#blog:hover {
+	background: url(images/zfSprite-hover.png) 0 -336px;
+}
+
+#blogLink {
+	width: 86px;
+	height: 106px;
+}
+	
+#welcome {
+	top: -779px;
+	left: 0px;
+	width: 205px;
+	height: 100px;
+	background: url(images/zfSprite.png) 0 0;
+}
+	
+#welcome:hover {
+	background: url(images/zfSprite-hover.png) 0 0;
+}
+	
+#h {
+	position: relative;
+	top: -797px;
+	left: 31px;
+	width: 121px;
+	height: 62px;
+	background-color: #6ec3fc;
+}
+
+.rightArrow {
+	width: 50px;
+	height: 50px;
+	background: url(images/zfSprite.png) -86px -336px;
+	}
+	
+/*.rightArrow:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/zfSprite-hover.png) -86px -336px;
+	}*/
+	
+.leftArrow {
+	width: 50px;
+	height: 50px;
+	background: url(images/zfSprite.png) -136px -336px;
+	}
+	
+/*.leftArrow:hover {
+	width: 50px;
+	height: 50px;
+	background: url(images/zfSprite-hover.png) -136px -336px;
+	}*/
+	
+.upArrow {
+	width: 50px;
+	height: 50px;
+	background: url(images/zfSprite.png) -86px -386px;
+	}
+	
+#footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 328px;
+	color: #555555;
+	background-color: #222222;
+	border: #555555 1px solid;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	text-align: center;
+	box-shadow: 5px 5px 10px 1px #000000;
+}

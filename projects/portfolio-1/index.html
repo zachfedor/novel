@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>- Zach Fedor -</title>
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="Jack of all Trades" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
+	<script src="prototype.js" type="text/javascript"> </script>
+	<script src="effects.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var siteObject, siteMoved, portObject, portMoved, aboutObject, aboutMoved, servObject, servMoved, contObject, contMoved, blogObject, blogMoved;
+		var animationComplete = true;		// var to determine if there is an Animation in progress or if its completed
+		var footerMoved = false;		// var to alternate positions of #footer
+		function welcome() {		// returns all moveable elements to original position
+			if(animationComplete) {	// check to see if anything is moving first
+				if(siteMoved == 1) {	// returns "To My Site" elements
+					animationComplete = false;		// make elements unclickable
+					new Effect.Morph('siteClick4', { style: 'height: 0px;', duration: 0.3 });
+					setTimeout("new Effect.Morph('siteClick3', { style: 'height: 0px;', duration: 0.3 });", 300);
+					setTimeout("new Effect.Morph('siteClick2', { style: 'height: 0px; top: -620px;', duration: 0.3 });", 600);
+					setTimeout("new Effect.Morph('siteClick1', { style: 'width: 0px;', duration: 0.3 });", 900);
+					setTimeout("animationComplete = true;", 900);		// make elements clickable again
+					siteMoved = 0;
+				}
+				if(portMoved == 1) {		// returns "Portfolio" elements
+					animationComplete = false;		// make elements unclickable
+					new Effect.Morph('portClick3', { style: 'height: 0px;', duration: 0.2 });
+					setTimeout("new Effect.Morph('portClick2', { style: 'height: 0px;', duration: 0.3 });", 200);
+					setTimeout("new Effect.Morph('portClick1', { style: 'width: 0px; left: 900px;', duration: 0.3 });", 500);
+					setTimeout("new Effect.Morph('portClick', { style: 'height: 0px;', duration: 0.3 });", 800);
+					setTimeout("animationComplete = true;", 900);		// make elements clickable again
+					portMoved = 0;
+				}
+				if(aboutMoved == 1) {		// returns "About" elements
+					animationComplete = false;		// make elements unclickable
+					new Effect.Morph('element1', { style: 'height: 0px;', duration: 0.1 });
+					setTimeout("new Effect.Morph('about7', {style: 'height: 0px;', duration: 0.1 });", 100);
+					setTimeout("new Effect.Morph('about6', {style: 'height: 0px;', duration: 0.1 });", 200);
+					setTimeout("new Effect.Morph('about5', {style: 'height: 0px;', duration: 0.1 });", 300);
+					setTimeout("new Effect.Morph('about4', {style: 'height: 0px;', duration: 0.1 });", 400);
+					setTimeout("new Effect.Morph('about3', {style: 'height: 0px;', duration: 0.1 });", 500);
+					setTimeout("new Effect.Morph('about2', {style: 'width: 0px;', duration: 0.1 });", 600);
+					setTimeout("new Effect.Morph('about1', { style: 'height: 0px;', duration: 0.2 });", 700);
+					setTimeout("animationComplete = true;", 900);		// make elements clickable again
+					aboutMoved = 0;
+				}
+				if(servMoved == 1) {		// returns "Services" elements
+					animationComplete = false;		// make elements unclickable
+					new Effect.Morph('serv3', { style: 'height: 0px;', duration: 0.6 });
+					new Effect.Morph('serv2', { style: 'height: 0px;', duration: 0.6 });
+					new Effect.Morph('serv1', { style: 'height: 0px;', duration: 0.6 });
+					setTimeout("animationComplete = true;", 600);		// make elements clickable again
+					servMoved = 0;
+				}
+				/*if(contMoved == 1) {
+					contMoved = 0;
+				}
+				if(blogMoved == 1) {
+					blogMoved = 0;
+				}*/
+			}
+		}
+		function site() {		// shows "To My Site" elements
+			if(animationComplete) {	// check to see if anything is moving first
+				if(siteMoved == 0) {		// making sure it is not already showing
+					if(portMoved == 1 || aboutMoved == 1 || servMoved == 1 || contMoved == 1 || blogMoved == 1) {		// checking to see if any other element is showing
+						welcome();		// returns those other elements
+						setTimeout("animationComplete = false;", 900);		// make elements unclickable
+						setTimeout("new Effect.Morph('siteClick1', { style: 'width: 83px;', duration: 0.6 });",900);
+						setTimeout("new Effect.Morph('siteClick2', { style: 'height: 900px; top: -850px;', duration: 0.6 });", 1500);
+						setTimeout("new Effect.Morph('siteClick3', { style: 'height: 155px;', duration: 0.6 });", 2100);
+						setTimeout("new Effect.Morph('siteClick4', { style: 'height: 215px;', duration: 0.6 });", 2700);
+						setTimeout("animationComplete = true;", 3300);		// make elements clickable again
+					} else {
+						animationComplete = false;		// make elements unclickable
+						new Effect.Morph('siteClick1', { style: 'width: 83px;', duration: 0.6 });
+						setTimeout("new Effect.Morph('siteClick2', { style: 'height: 900px; top: -850px;', duration: 0.6 });", 600);
+						setTimeout("new Effect.Morph('siteClick3', { style: 'height: 155px;', duration: 0.6 });", 1200);
+						setTimeout("new Effect.Morph('siteClick4', { style: 'height: 215px;', duration: 0.6 });", 1800);
+						setTimeout("animationComplete = true;", 2400);		// make elements clickable again
+					}
+					siteMoved = 1;
+				} else {
+					welcome();		// returns "To My Site" elements
+				}
+			}
+		}
+		function port() {		// shows "Portfolio" elements
+			if(animationComplete) {	// check to see if anything is moving first
+				if(portMoved == 0) {		// check to see if it is already showing
+					if(siteMoved == 1 || aboutMoved == 1 || servMoved == 1 || contMoved == 1 || blogMoved == 1) {		// check to see if any other element is showing
+						welcome();		// returns those elements
+						setTimeout("animationComplete = false;", 900);		// make elements unclickable
+						setTimeout("new Effect.Morph('portClick', { style: 'height: 100px;', duration: 0.6 });", 900);
+						setTimeout("new Effect.Morph('portClick1', { style: 'width: 500px; left: 400px;', duration: 0.6 });", 1500);
+						setTimeout("new Effect.Morph('portClick2', { style: 'height: 3050px;', duration: 0.6 });", 2100);
+						setTimeout("new Effect.Morph('portClick3', { style: 'height: 2950px;', duration: 0.6 })", 2700);
+						setTimeout("portNav(1)", 2700);		// starts off default internal navigation, see portNav() function
+						setTimeout("animationComplete = true;", 3300);		// make elements clickable again
+					} else {
+						animationComplete = false;		// make elements unclickable
+						new Effect.Morph('portClick', { style: 'height: 100px;', duration: 0.6 });
+						setTimeout("new Effect.Morph('portClick1', { style: 'width: 500px; left: 400px;', duration: 0.6 });", 600);
+						setTimeout("new Effect.Morph('portClick2', { style: 'height: 3050px;', duration: 0.6 });", 1200);
+						setTimeout("new Effect.Morph('portClick3', { style: 'height: 2950px;', duration: 0.6 })", 1800);
+						setTimeout("portNav(1)", 1800);		// starts off default internal navigation, see portNav() function
+						setTimeout("animationComplete = true;", 2400);		// make elements clickable again
+					}
+					portMoved = 1;
+				} else {
+					welcome();		// returns "Portfolio" elements
+				}
+			}
+		}
+		function about() {		// shows "About" elements
+			if (animationComplete) {		// check to see if anything is moving first
+				if(aboutMoved == 0) {		// chsck to see if it is already showing
+					if(siteMoved == 1 || portMoved == 1 || servMoved == 1 || contMoved == 1 || blogMoved == 1) {		// check to see if any other element is showing
+						welcome();		// returns those elements
+						setTimeout("animationComplete = false;", 900);		// make elements unclickable
+						setTimeout("new Effect.Morph('about1', { style: 'height: 140px;', duration: 0.6 });", 900);
+						setTimeout("new Effect.Morph('about2', { style: 'width: 900px;', duration: 0.6 });", 1500);
+						setTimeout("new Effect.Morph('about3', { style: 'height: 125px;', duration: 0.2 });", 2100);
+						setTimeout("new Effect.Morph('about4', { style: 'height: 125px;', duration: 0.2 });", 2300);
+						setTimeout("new Effect.Morph('about5', { style: 'height: 125px;', duration: 0.2 });", 2500);
+						setTimeout("new Effect.Morph('about6', { style: 'height: 125px;', duration: 0.2 });", 2700);
+						setTimeout("new Effect.Morph('about7', { style: 'height: 125px;', duration: 0.2 });", 2900);
+						setTimeout("new Effect.Morph('element1', { style: 'height: 255px;', duration: 0.2 });", 3100);
+						setTimeout("animationComplete = true;", 3300);		// make elements clickable again
+					} else {
+						animationComplete = false;		// make elements unclickable
+						new Effect.Morph('about1', { style: 'height: 140px;', duration: 0.6 });
+						setTimeout("new Effect.Morph('about2', { style: 'width: 900px;', duration: 0.6 });", 600);
+						setTimeout("new Effect.Morph('about3', { style: 'height: 125px;', duration: 0.2 });", 800);
+						setTimeout("new Effect.Morph('about4', { style: 'height: 125px;', duration: 0.2 });", 1000);
+						setTimeout("new Effect.Morph('about5', { style: 'height: 125px;', duration: 0.2 });", 1200);
+						setTimeout("new Effect.Morph('about6', { style: 'height: 125px;', duration: 0.2 });", 1400);
+						setTimeout("new Effect.Morph('about7', { style: 'height: 125px;', duration: 0.2 });", 1600);
+						setTimeout("new Effect.Morph('element1', { style: 'height: 255px;', duration: 0.2 });", 1800);
+						setTimeout("animationComplete = true;", 2000);		// make elements clickable again
+					}
+					aboutMoved = 1;
+				} else {
+					welcome();		// returns "About" elements
+				}
+			}
+		}
+		function serv() {		// shows "Service" elements
+			if (animationComplete) {		// check to see if anything is moving first
+				if(servMoved == 0) {		// check to see if it is already showing
+					if(siteMoved == 1 || portMoved == 1 || aboutMoved == 1 || contMoved == 1 || blogMoved == 1) {		// check to see if any other element is showing
+						welcome();		// returns those elements
+						setTimeout("animationComplete = false;", 900);		// makes elements unclickable
+						setTimeout("new Effect.Morph('serv1', { style: 'height: 100px;', duration: 0.6 });", 900);
+						setTimeout("new Effect.Morph('serv2', { style: 'height: 100px;', duration: 0.6 });", 900);
+						setTimeout("new Effect.Morph('serv3', { style: 'height: 100px;', duration: 0.6 });", 900);
+						setTimeout("animationComplete = true;", 1500);		// make elements clickable again
+					} else {
+						animationComplete = false;		// makes elements unclickable
+						new Effect.Morph('serv1', { style: 'height: 100px;', duration: 0.6 });
+						new Effect.Morph('serv2', { style: 'height: 100px;', duration: 0.6 });
+						new Effect.Morph('serv3', { style: 'height: 100px;', duration: 0.6 });
+						setTimeout("animationComplete = true;", 600);		// make elements clickable again
+					}
+					servMoved = 1;
+				} else {
+					welcome();		// returns "Service" elements
+				}
+			}
+		}
+		function cont() {		//  will eventually show "Contact" elements
+			if(contMoved == 0) {
+				contMoved = 1;
+			} else {
+				contMoved = 0;
+			}
+		}
+		function blog() {		// will eventually show "Blog" elements
+			if(blogMoved == 0) {
+				blogMoved = 1;
+			} else {
+				blogMoved = 0;
+			}
+		}
+		function portNav(a) {		// internal "Portfolio" navigation: switches between Web, Logo, and Art work tables; also highlights selected "tab" in nav bar
+			if (a == 3) {		// displays artwork
+				document.getElementById("siteTable").style.display="none";
+				document.getElementById("graphicTable").style.display="none";
+				document.getElementById("artTable").style.display="table";
+				document.getElementById("portNav3").style.color = "#ffffff";
+				document.getElementById("portNav2").style.color = "rgba(255, 255, 255, 0.50)";
+				document.getElementById("portNav1").style.color = "rgba(255, 255, 255, 0.50)";
+			} else if (a == 2) {		// displays logos
+				document.getElementById("siteTable").style.display="none";
+				document.getElementById("graphicTable").style.display="table";
+				document.getElementById("artTable").style.display="none";
+				document.getElementById("portNav3").style.color = "rgba(255, 255, 255, 0.50)";
+				document.getElementById("portNav2").style.color = "#ffffff";
+				document.getElementById("portNav1").style.color = "rgba(255, 255, 255, 0.50)";
+			} else if (a == 1) {		// displays sites
+				document.getElementById("siteTable").style.display="table";
+				document.getElementById("graphicTable").style.display="none";
+				document.getElementById("artTable").style.display="none";
+				document.getElementById("portNav3").style.color = "rgba(255, 255, 255, 0.50)";
+				document.getElementById("portNav2").style.color = "rgba(255, 255, 255, 0.50)";
+				document.getElementById("portNav1").style.color = "#ffffff";
+			}
+		}
+		function pNH1(x) {		// Hover effect on Portfolio Navigation buttons,  onmouseover
+			if (x == 3) {		// art
+				document.getElementById("portNav3").style.textShadow = "0px 0px 2px #ffffff";
+			} else if (x ==2) {		// graphic
+				document.getElementById("portNav2").style.textShadow = "0px 0px 2px #ffffff";
+			} else if (x == 1) {		// web
+				document.getElementById("portNav1").style.textShadow = "0px 0px 2px #ffffff";
+			}
+		}
+		function pNH2(x) {		// Hover effect on Portfolio Navigation buttons,  onmouseout
+			if (x == 3) {		// art
+				document.getElementById("portNav3").style.textShadow = "none";
+			} else if (x ==2) {		// graphic
+				document.getElementById("portNav2").style.textShadow = "none";
+			} else if (x == 1) {		// web
+				document.getElementById("portNav1").style.textShadow = "none";
+			}
+		}
+		function aboutNav(x) {		// internal navigation for "About" elements: switches between list items in #element1
+			if (x == 1) {		// shows "school"
+				new Effect.Morph('element1', { style: 'height: 255px;', duration: 0.4 });
+				document.getElementById("school").style.display="block";
+				document.getElementById("work").style.display="none";
+				document.getElementById("skills").style.display="none";
+				document.getElementById("awards").style.display="none";
+				document.getElementById("hobbies").style.display="none";
+			} else if (x == 2) {		// shows "work"
+				new Effect.Morph('element1', { style: 'height: 600px;', duration: 0.4 });
+				document.getElementById("school").style.display="none";
+				document.getElementById("work").style.display="block";
+				document.getElementById("skills").style.display="none";
+				document.getElementById("awards").style.display="none";
+				document.getElementById("hobbies").style.display="none";
+			} else if (x == 3) {		// shows "skills"
+				new Effect.Morph('element1', { style: 'height: 260px;', duration: 0.4 });
+				document.getElementById("school").style.display="none";
+				document.getElementById("work").style.display="none";
+				document.getElementById("skills").style.display="block";
+				document.getElementById("awards").style.display="none";
+				document.getElementById("hobbies").style.display="none";
+			} else if (x == 4) {		// shows "awards"
+				new Effect.Morph('element1', { style: 'height: 220px;', duration: 0.4});
+				document.getElementById("school").style.display="none";
+				document.getElementById("work").style.display="none";
+				document.getElementById("skills").style.display="none";
+				document.getElementById("awards").style.display="block";
+				document.getElementById("hobbies").style.display="none";
+			} else if(x == 5) {		// shows "hobbies"
+				new Effect.Morph('element1', { style: 'height: 270px;', duration: 0.4 });
+				document.getElementById("school").style.display="none";
+				document.getElementById("work").style.display="none";
+				document.getElementById("skills").style.display="none";
+				document.getElementById("awards").style.display="none";
+				document.getElementById("hobbies").style.display="block";
+			}
+		}
+		function footer() {		// alternates display of "Footer" between right and left
+			if (footerMoved) {
+				document.getElementById("footer").style.right = "0";
+				document.getElementById("footer").style.marginRight = "10px";
+				footerMoved = false;
+			} else {
+				document.getElementById("footer").style.right = "100%";
+				document.getElementById("footer").style.marginRight = "-362px";
+				footerMoved = true;
+			}
+		}
+		function init() {		// initializes variables holding document.elements and sets original positions
+			siteObject = document.getElementById('site');
+			siteMoved = 0;
+			portObject = document.getElementById('port');
+			portMoved = 0;
+			aboutObject = document.getElementById('about');
+			aboutMoved = 0;
+			servObject = document.getElementById('serv');
+			servMoved = 0;
+			contObject = document.getElementById('cont');
+			contMoved = 0;
+			blogObject = document.getElementById('blog');
+			blogMoved = 0;
+			
+			siteElement1 = document.getElementById('site1');
+			siteElement2 = document.getElementById('site2');
+			portElement1 = document.getElementById('portClick');
+			portElement2 = document.getElementById('portClick1');
+			portElement3 = document.getElementById('portClick2');
+			aboutElement1 = document.getElementById('about1');
+			blogClick = document.getElementById('blog');
+		}
+	</script>
+</head>
+
+<body onload="init()">
+	<div id="wrapper">
+		<div id="site" onclick="site()"></div>
+		<div id="port" onclick="port()"></div>
+		<div id="about" onclick="about()"></div>
+		<div id="serv" onclick="serv()"></div>
+		<div id="cont" onclick="cont()"><a href="mailto:zachfedor@gmail.com?Subject=Portfolio%20Inquiry" target="_blank" ><div id="contLink" ></div></a></div>
+		<div id="blog" onclick="blog()"><a href="http://zachfedor.tumblr.com/" target="_blank" ><div id="blogLink" ></div></a></div>
+		<div id="welcome" onclick="welcome()"></div>
+		<div id="h"></div>
+		<div id="siteClick1"></div>
+		<div id="siteClick2"><div id="site3" class="upArrow"></div></div>
+		<div id="siteClick3">
+			<img id="site1" src="images/me1.jpg" alt="me" />
+		</div>
+		<div id="siteClick4">
+			<div id="site2">
+				<p>I'm Zach and I'm a web designer. I made this site to show off some of my skills.</p>
+				<p>Click "Portfolio" to see examples of my work. Or read some of my writing by clicking "Blog."</p>
+			</div>
+		</div>
+		<div id="portClick" onclick="port()"></div>
+		<div id="portClick1" >
+			<ul id="portNav">
+				<li id="portNav1" class="portNavLi" onclick="portNav(1)" onmouseover="pNH1(1)" onmouseout="pNH2(1)" >Websites</li>
+				<li id="portNav2" class="portNavLi" onclick="portNav(2)" onmouseover="pNH1(2)" onmouseout="pNH2(2)" >Graphics</li>
+				<li id="portNav3" class="portNavLi" onclick="portNav(3)" onmouseover="pNH1(3)" onmouseout="pNH2(3)" >Artwork</li>
+			</ul>
+		</div>
+		<div id="portClick2" ></div>
+		<div id="portClick3" >
+			<table id="siteTable">
+				<tr>
+					<td class="left"><a href="http://cis-linux2.temple.edu:8080/FA12_1056_tuc58192/" target="_blank" ><img src="images/scriptorium.png" alt="Scriptorium" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow" ></div></td>
+					<td class="right">A JSP Webapp for a fake antique book retailer. A school project.</td>
+				</tr>
+				<tr>
+					<td class="left">Interactive Storytelling project. I planted the seed of a story, and everyone is growing it together. Uses PHP and AJAX.</td>
+					<td class="center"><div class="leftArrow" ></div></td>
+					<td class="right"><a href="/story/index.php" target="_blank" ><img src="images/story.png" alt="How To Grow A Story" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="/whodunit/index.html" target="_blank" ><img src="images/whodunit.png" alt="Whodunit?" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow" ></div></td>
+					<td class="right">Interactive QR-code based game. I set up a crime scene on Temple's campus and clues contained QR codes, linking them to clue pages online. Can you figure it out?</td>
+				</tr>
+				<tr>
+					<td class="left">Most recent work project at SportFitDeal. I acted as their Product and Support Expert, with Marketing/Advertising duties as well.</td>
+					<td class="center"><div class="leftArrow" ></div></td>
+					<td class="right"><a href="http://www.sportfitdeal.com" target="_blank" ><img src="images/sfdweb.png" alt="SportFitDeal" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="http://www.musicmolds.com" target="_blank" ><img src="images/musicmolds.png" alt="Music Molds" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow" ></div></td>
+					<td class="right">Headed content-creation directly under lead developer.</td>
+				</tr>
+				<tr>
+					<td class="left">Headed content-creation directly under lead developer.</td>
+					<td class="center"><div class="leftArrow" ></div></td>
+					<td class="right"><a href="http://www.lextechaudits.com" target="_blank" ><img src="images/lexington.png" alt="Lexington Technologies" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="http://www.zachfedor.com" ><img src="images/zachfedorweb.png" alt="zachfedor.com" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow" ></div></td>
+					<td class="right">Here.</td>
+				</tr>
+				<tr>
+					<td class="left">A fake department store site to showcase Javascript motion and PHP/MySQL communication for a web programming course.</td>
+					<td class="center"><div class="leftArrow" ></div></td>
+					<td class="right"><a href="http://cis-linux2.temple.edu/~tuc58192/lab9/" target="_blank" ><img src="images/fdsweb.png" alt="FDS" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="http://cis-linux2.temple.edu/~tuc58192/phil/" target="_blank" ><img src="images/philweb.png" alt="Ethnography Research" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow" ></div></td>
+					<td class="right">A project for a philosophy course. Fronts as a survey, but is actually researching users patience during loading screens.</td>
+				</tr>
+				<tr>
+					<td class="left">A Thanksgiving project for a web programming class with a user database and a javascript game.</td>
+					<td class="center"><div class="leftArrow"></div></td>
+					<td class="right"><a href="http://cis-linux2.temple.edu/~tuc58192/lab8/" target="_blank" ><img src="images/thanksgivingweb.png" alt="Thanksgiving Party" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="http://cis-linux2.temple.edu/~tuc58192/lab6/" target="_blank" ><img src="images/lab6web.png" alt="Lab 6" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow"></div></td>
+					<td class="right">More practice with javascript animation and color changes for a web programming class.</td>
+				</tr>
+				<tr>
+					<td class="left">Simple javascript animation and cookies.</td>
+					<td class="center"><div class="leftArrow"></div></td>
+					<td class="right"><a href="http://cis-linux2.temple.edu/~tuc58192/lab5/bouncingboxes.html" target="_blank" ><img src="images/lab5.png" alt="Lab 5" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="http://cis-linux2.temple.edu/~tuc58192/lab4/" target="_blank" ><img src="images/mortgagecalculatorscreenshotweb.png" alt="Mortgage Calculator" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow"></div></td>
+					<td class="right">Mortgage calculation with javascript.</td>
+				</tr>
+				<tr>
+					<td class="left">Mock site showing layout differences between Divs and Tables.</td>
+					<td class="center"><div class="leftArrow"></div></td>
+					<td class="right"><a href="http://cis-linux2.temple.edu/~tuc58192/lab3/" target="_blank" ><img src="images/erecruitmentwebformscreenshotweb.png" alt="Layout Differences" width="300" height="200" /></a></td>
+				</tr>
+			</table>
+			<table id="graphicTable">
+				<tr>
+					<td class="left">Coming Soon... </td>
+					<td class="center"><div class="rightArrow"></div></td>
+					<td class="right"><a href="#" ><img src="images/comingSoon.png" alt="Logo 2" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="#"><img src="images/comingSoon.png" alt="Logo 1" width="300" height="200" /></a></td>
+					<td class="center"><div class="leftArrow"></div></td>
+					<td class="right">A list of logos and graphics I've created.</td>
+				</tr>
+			</table>
+			<table id="artTable">
+				<tr>
+					<td class="left">More to come soon...</td>
+					<td class="center"><div class="leftArrow"></div></td>
+					<td class="right"><a href="images/comingSoon.png" ><img src="images/comingSoon.png" alt="Coming Soon" width="300" height="200" /></a></td>
+				</tr>
+				<tr>
+					<td class="left"><a href="images/zombieEye.jpg" target="_blank" ><img src="images/zombieEyeWeb.jpg" alt="Zombie Eye" width="300" height="200" /></a></td>
+					<td class="center"><div class="rightArrow"></div></td>
+					<td class="right">Poster art for a Zombie movie (ink, digital painting)</td>
+				</tr>
+				<tr>
+					<td class="left">Random abstract doodling... (ink)</td>
+					<td class="center"><div class="leftArrow"></div></td>
+					<td class="right"><a href="images/abstract1.png" target="_blank" ><img src="images/abstract1Web.png" alt="Abstract 1" width="300" height="200" /></a></td>
+				</tr>
+			</table>
+		</div>
+		<div id="about1"></div>
+		<div id="about2"></div>
+		<div id="about3" onclick="aboutNav(5);" ></div>	<!-- hobbies -->
+		<div id="about4" onclick="aboutNav(4);" ></div>	<!-- skills button -->
+		<div id="about5" onclick="aboutNav(3);" ></div> <!-- awards button -->
+		<div id="about6" onclick="aboutNav(2);" ></div> <!-- work button -->
+		<div id="about7" onclick="aboutNav(1);" ></div> <!-- school button -->
+		<div id="element1">
+			<ul>
+				<li id="school" ><h2>School</h2>
+					<p>I attend Temple University for a Bachelor's Degree in English with a concentration in Creative Writing, and I have a minor in Digital Media Technologies. I expect to graduate in 2013. I also spent a year at Drexel University while majoring in Chemical Engineering.</p>
+				</li>
+				<li id="work" ><h2>Work</h2>
+					<p>The last project I worked on was a small startup at SportFitDeal.com as their Product and Support Expert. I oversaw maintenance of the site, as well as developments after initial construction. I also took over Marketing and Advertising duties, and designed their latest ad campaigns.</p>
+					<p>I currently work at Temple University's Climbing Wall as an Instructor. I lead clinics for students teaching beginner and advanced classes. Before this, I worked at Camp Hebron as a Recreation Director. I facilitated High Ropes Challenge Courses, team-building exercises, large group games, and rock climbing/canoeing/hiking trips. I have also been a camp counselor, librarian, barista, lifegaurd, and fax technician.</p>
+				</li>
+				<li id="skills" ><h2>Skills</h2>
+					<p>I handle HTML / CSS / and Javascript quite well, and have even dabbled in PHP / MySQL. I can also use Adobe Photoshop CS5, all manner of Office suites, and can use Windows, Mac, and Linux machines. When I find something I don't know how to do, I learn it as fast as I can.</p>
+				</li>
+				<li id="awards" ><h2>Awards</h2>
+					<p>This year, I was awarded 2nd place for Best Research Paper and 3rd place for Best Website at the Annual Broadcasting, Telecommunications, and Mass Media Competition at Temple University.</p>
+				</li>
+				<li id="hobbies" ><h2>Hobbies</h2>
+					<p>I enjoy doing anything outside, from rock climbing, to backpacking, to canoeing. I also pursue many creative endeavors beyond web design, such as creative writing, acting, and drawing.</p>
+					<p>Check out <a href="http://zachfedor.tumblr.com/" target="_blank" >my blog</a> for some of my writing!</p>
+				</li>
+			</ul>
+		</div>
+		<div id="serv1"><h2>Web <br /> Development</h2></div>
+		<div id="serv2"><h2>Graphic <br /> Design</h2></div>
+		<div id="serv3"><h2>Web <br /> Design</h2></div>
+	</div>
+	<div id="footer" onmouseover="footer()" >Made by Zach Fedor   <span class="divider">|</span>   Copyright 2012 </div>
+</body>
+</html>

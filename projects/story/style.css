@@ -1,0 +1,129 @@
+body {
+	font-family: georgia, serif;
+	background: url('checkers.png') repeat top center;
+	text-align: center;
+	color: #393939;
+}
+
+#wrapper {
+	width: 1010px;
+	margin: 20px auto;
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+div {
+	margin: 0px;
+	padding: 0px;
+}
+
+.banner {
+	height: 140px;
+}
+
+.header {
+	margin-bottom: 10px;
+}
+
+.about {
+	text-decoration: none;
+	color: #72a627;
+	height: 100px;
+}
+
+.about:hover {
+	color: #393939;
+	text-decoration: underline;
+}
+
+#old {
+	margin: 40px 0 0 0;
+}
+
+table {
+	width: 100%;
+	margin: 20px auto;
+}
+
+td {
+	vertical-align: top;
+}
+
+.left {
+	padding: 3px 0px;
+	margin: 0px;
+	width: 200px;
+}
+
+.right {
+	width: 600px;
+	padding: 0px;
+}
+
+.time {
+	color: #cccccc;
+	text-align: left;
+}
+
+.entry {
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+textarea {
+	width: 580px;
+	padding: 10px;
+	resize: vertical;
+	border-color: #72a627;
+	background-color: #f0fedc;
+	font-family: georgia, serif;
+}
+
+input {
+	margin: 10px;
+}
+
+.name {
+	vertical-align: middle;
+}
+
+.name input {
+	border-color: #72a627;
+	background-color: #f0fedc;
+	font-family: georgia, serif;
+}
+
+.note {
+	padding: 10px;
+	margin: 0;
+}
+
+.post {
+	padding: 10px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.spacer {
+	height: 15px;
+}
+
+.footer {
+	border-top: 2px #393939 solid;
+}
+
+.topper {
+	border-bottom: 2px #393939 solid;
+}
+
+.topper img {
+	vertical-align: bottom;
+}
+
+.pic {
+	margin: 0 0 0 40px;
+}
+
+.far {
+	width: 200px;
+}

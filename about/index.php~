@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>- about -</title>
+
+<?php include 'header.html' ?>
+
+    <section>
+        <article id="main" class="row clearfix">
+            <div class="column full quoteBlock">
+				<p class="quoteContent">No, you do not have thousands of years to live. Urgency is on you. While you live, while you can, become good.</p>
+				<span class="quoteAuthor">-marcus aurelius-</span>
+            </div>
+
+            <div class="column third">
+            	<img class="aboutImage" src="http://www.zachfedor.com/images/me1.jpg" alt="-zach fedor-" width="184" height="149">
+            </div>
+            <div class="column two-thirds">
+            	<p>Once upon a time there was a boy who never let his education get in the way of his learning. As he grew up, he learned how much there really is to know, and </p>
+        </article>
+    </section>
+
+<?php include 'footer.html' ?>
