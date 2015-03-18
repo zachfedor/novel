@@ -1,10 +1,17 @@
+<?php
+
+/**
+ * Novel - About
+ */
+
+?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
     <title>-About-</title>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/header.html' ?>
+<?php include '../includes/header.php' ?>
 
     <main role="main">
         <article class="row clearfix">
@@ -96,4 +103,4 @@
         </article>
     </main>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.html' ?>
+<?php include '../includes/footer.php' ?>

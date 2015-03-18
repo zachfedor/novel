@@ -1,9 +1,15 @@
 <?php
+
+/**
+ * Novel - Contact
+ */
+
     session_start();        // starting user session to pass variables through the POST-REDIRECT-GET process
 
     $echoedName = "";       // vars to hold persistant display of user input
     $echoedEmail = "";
     $echoedMessage = "";
+    $alert = "";
 
     function validEmail ($email) {      // true email validation by Douglas Lovell http://www.linuxjournal.com/article/9585
         $isValid = true;        // var to return success/fail of validation
@@ -97,7 +103,7 @@
 <head>
     <title>-Contact-</title>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/header.html' ?>
+<?php include '../includes/header.php' ?>
 
     <main role="main">
         <article id="main" class="row clearfix">
@@ -122,4 +128,4 @@
         </article>
     </main>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.html' ?>
+<?php include '../includes/footer.php' ?>

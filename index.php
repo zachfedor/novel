@@ -1,3 +1,15 @@
+<?php
+
+/**
+ * Novel
+ *
+ * author: zachfedor
+ * url: http://zachfedor.com
+ * license: MIT
+ * version: 2.0
+ */
+
+?>
 <!DOCTYPE HTML>
 <html>
 <!--,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -29,7 +41,13 @@
 <head>
     <title>-Zach Fedor-</title>
 
-<?php include 'includes/header.html'; ?>
+<?php 
+
+$root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+
+include 'includes/header.php'; 
+
+?>
 
     <main role="main">
         <article id="main" class="row clearfix">
@@ -56,4 +74,4 @@
         </article>
     </main>
 
-<?php include 'includes/footer.html'; ?>
+<?php include 'includes/footer.php'; ?>
