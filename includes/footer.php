@@ -3,7 +3,7 @@
         <div class="row clearfix">
             <p>
                 <span>Developer. Writer. Philosopher.</span>
-                <span class="footerRight">&copy; 2014 Zach Fedor</span>
+                <span class="footerRight">&copy; <?php echo date("Y"); ?> Zach Fedor</span>
             </p>
         </div>
     </footer>

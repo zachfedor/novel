@@ -101,7 +101,7 @@
 <html>
 
 <head>
-    <title>-Contact-</title>
+    <title>Contact</title>
 
 <?php include '../includes/header.php' ?>
 

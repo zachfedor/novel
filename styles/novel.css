@@ -1,18 +1,11 @@
-/***************************************
-
-novel.css
-
-author - zach fedor
-date - 2015-03-17
-version - 2.1
-
-for portfolio site - zachfedor.com
-
-description - a page taken straight
-out of a dusty leather bound volume
-inspired by my love of the written word
-
-***************************************/
+/**
+ * Novel Styles
+ *
+ * author: zachfedor
+ * url: http://zachfedor.com
+ * license: MIT
+ * version: 2.0
+ */
 
 /* global 
 ***************************************/
@@ -28,29 +21,28 @@ inspired by my love of the written word
 
 html {
     /* Small screens (default) */
-    font-size: 100%;
+    font-size: 115%;
     height: 100%;
     font-family: 'Crimson Text', serif;
     background: #ffffff;
     color: #3D464D;
 }
 
-body {/*
-    height: 100%;*/
+body {
     text-align: left;
 }
  
 @media (min-width: 40rem) {
     /* Medium screens (640px) */
     html {
-        font-size: 112%;
+        font-size: 125%;
     }
 }
 
 @media (min-width: 64rem) {
     /* Large screens (1024px) */ 
     html {
-        font-size: 120%;
+        font-size: 140%;
     }
 }
 
@@ -119,7 +111,7 @@ body {/*
 
 .bannerWrap a {
     text-decoration: none;
-    color: #aaaaaa;
+    color: #999;
 }
 
 .bannerWrap a:hover, .bannerWrap a:active, .bannerWrap a:focus {
@@ -135,6 +127,7 @@ body {/*
     padding: 1.7rem 0 0.7rem;
     font-size: 1.4rem;
     color: #3D464D;
+    transition: color 0.4s;
 }
 
 .bannerTitle:hover {
@@ -180,7 +173,8 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 600;
+    font-style: italic;
 }
 
 h3 {
@@ -194,6 +188,7 @@ h4 {
 
 a {
     color: #3D464D;
+    transition: color 0.4s;
 }
 
 a:hover, a:active, a:focus {
@@ -284,6 +279,10 @@ hr {
     margin-bottom: 6em;
     text-align: left;
     line-height: 180%;
+}
+
+.visitLink {
+    font-style: italic;
 }
 
 @media (min-width: 50rem) {

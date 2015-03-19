@@ -9,14 +9,14 @@
 <html>
 
 <head>
-    <title>-About-</title>
+    <title>About</title>
 
 <?php include '../includes/header.php' ?>
 
     <main role="main">
         <article class="row clearfix">
             <header class="col1">
-                <h1 class="pageTitle">-About-</h1>
+                <h1 class="pageTitle">About</h1>
             </header>
 <!-- 
             <figure class="col2">

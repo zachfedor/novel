@@ -10,6 +10,33 @@ $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, welcome to the ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, portfolio page of ,,,,,,,,,,,~I7I:,,,,,,,,,,,,,,,,?7777?,,,,,,,,,,,,,,=I7I.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,=7I:,,,,,,,,,,,,,,~77=.=77~,,,,,,,,,,,,,~I77,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,II:,,,,,,,,,,,,,,+7?,,,,,,,,,,,,,,,,,,,,+7I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,~I77777?,,,,+I7?,,,,,,:=777+,,,?7?77+,,,,,,,,,,,I7?~+,,.,7777=,,,,,,~I777I,,,,~7777?,,,,,,I:=I:,,,,,,,,,,
+,,,,,,,,,,~7?,,I77+,,,II:=7I,,,~77+,?7+,,,I7~:+77:,,,,,,,:I77777,,:I+,,+7=,,:I7I,~77I,,,~7I~:777?,~777777=.,,,,,,,,,
+,,~===~,,,,.,,777?,,,,+:,,II:,,77I,,,,,,,,?I,,,77:,,,,,,,,,?7I,,,,I7III77I,,?77:,,+7I,,,I7~,,,?77,.,?I,~+:,,,====:,,
+.=77777?,,,,,=77~,,,,,:?777I,,,77I~,,,,,,,?I:,,77~,,,,,,,,,?7?,,,~77,,,,,,,,I7I,,,+7I,.:77:,,,+77,,,?I,,,,,~77777I,,
+,.,,,,,,,,,,=77:,,:,,,7I,:7?,,,?77I,,+?,,,I7~,,77=,,,,,,,,,?7I,.,,I7?:,,~:,,?77+,,+7I.,,?7?,.,I77,,,?I,,,,,.,,,,,,,,
+,,,,,,,,,,,777III7I,,:7777777I,,?77777:,=7777=I777?,,,,,,:I7777I,,,I77777:,,,?77I77777:,:777777I:,:I777I,,,,,,,,,,,,
+,,,,,,,,,,,,,,.,:=~,,,,,.,,,,.,,,,,,.,.,,,,,,,,,,.,.,,,,,,,,,,,,,,,,:==~,,,,,,,,,,:=,..,,..,,,,,,,,,,,,.,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, If you are seeing this message, it probably means one of two things: ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,, 1) you're in need of a website and you want to know that I can do the job, ,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,, 2) or I applied to work for you and you want to know that I can do the job. ,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, Either way, you are curious about my code, and for that I appreciate it. I like digging ,,,,,,,,,,,,,,,,,
+,,,,,,,,,, around and figuring out how things work, too. Feel free to poke around wherever you want. ,,,,,,,,,,,,,,,
+,,,,,,,,,, And if you're up for it, I'd love some feedback. I'm always trying to learn more and I'm ,,,,,,,,,,,,,,,,
+,,,,,,,,,, always up for improving myself. The one thing I know is that I don't know much. So if ,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, there is a better way to do something, I'd love to hear about it. And if you think ,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, everything looks great, I'd love to hear that, too. ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,, Thanks for stopping by! ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-->
+
     <meta name="description" content="The online portfolio of Zach Fedor, web developer, writer, and philosopher. See some examples of my work, read a little about me, or find out how to contact me.">
     <meta name="author" content="Zach Fedor">
 
@@ -30,14 +57,14 @@ $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_
 <body onload="init(); return false;">
     <header class="bannerWrap" role="banner">
         <div class="banner row">
-            <a href="<?php echo $root; ?>/" >
-                <span class="bannerTitle">-Zach Fedor-</span>
+            <a href="<?php echo $root; ?>" >
+                <span class="bannerTitle">Zach Fedor</span>
             </a>
 
             <nav class="">
-                <a href="<?php echo $root; ?>/projects" id="pNav" >Projects</a>
-                <a href="<?php echo $root; ?>/about" id="aNav" >About</a>
-                <a href="<?php echo $root; ?>/contact" id="cNav" >Contact</a>
+                <a href="<?php echo $root; ?>projects" id="pNav" >Projects</a>
+                <a href="<?php echo $root; ?>about" id="aNav" >About</a>
+                <a href="<?php echo $root; ?>contact" id="cNav" >Contact</a>
             </nav>
         </div>
     </header>
