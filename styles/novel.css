@@ -236,6 +236,8 @@ hr {
     margin: 0 auto 4em;
     padding: 0;
     max-width: 400px;
+    font-style: italic;
+    font-weight: 600;
 }
 
 .quoteBlock p.quoteContent {
@@ -255,6 +257,7 @@ hr {
 
 #hideAuthor, #hideContent {
     color: #ffffff;
+    visibility: hidden;
     padding: 0;
     margin: 0;
 }

@@ -18,12 +18,11 @@
             <header class="col1">
                 <h1 class="pageTitle">About</h1>
             </header>
-<!-- 
             <figure class="col2">
                 <picture>
                     <img src="/images/portrait.jpg" alt="Yeah. That's me.">
                 </picture>
-            </figure> -->
+            </figure>
 
             <section class="col2">
                 <p>My name is Zach Fedor and I strive to be a Renaissance man. I'm most often absorbed in designing and developing websites, reading and writing stories, rock climbing, or philosophy. If you want to see some of the things I've been working on, just head over to the <a href="/projects">projects page</a>.</p>
