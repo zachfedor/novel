@@ -24,7 +24,7 @@ html {
     font-size: 115%;
     height: 100%;
     font-family: 'Crimson Text', serif;
-    background: #ffffff;
+    background: #f6f7f9;
     color: #3D464D;
 }
 
@@ -103,7 +103,7 @@ body {
 /* header
 ***************************************/
 .bannerWrap {
-    background: #ffffff;
+    background: #f6f7f9;
     font-family: 'Crimson Text', serif;
     letter-spacing: 2;
     z-index: 5;
