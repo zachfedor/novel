@@ -2,72 +2,95 @@
 
 /**
  * Novel - Contact
+ *
+ * author: zachfedor
+ * url: http://zachfedor.com
+ * license: MIT
+ * version: 1.2
  */
 
-    session_start();        // starting user session to pass variables through the POST-REDIRECT-GET process
+    // starting user session to pass variables through the POST-REDIRECT-GET process
+    session_start();
 
-    $echoedName = "";       // vars to hold persistant display of user input
+    // vars to hold persistant display of user input
+    $echoedName = "";
     $echoedEmail = "";
     $echoedMessage = "";
     $alert = "";
 
-    function validEmail ($email) {      // true email validation by Douglas Lovell http://www.linuxjournal.com/article/9585
-        $isValid = true;        // var to return success/fail of validation
-        $atIndex = strrpos($email, "@");        // var to find location of @ symbol
+    // validate email input
+    function validEmail ($email) {
+        $isValid = true;
+        $atIndex = strrpos($email, "@");
 
         if (is_bool($atIndex) && !$atIndex) {
-           $isValid = false;        // incorrect location or lack of @ symbol
+           $isValid = false;
         } else {
-            $local = substr($email, 0, $atIndex);   // var to hold first half of address, local part
-            $domain = substr($email, $atIndex+1);   // var to hold last half of address, domain part
-            $localLen = strlen($local);     // finding length of local part
-            $domainLen = strlen($domain);   // finding length of domain part
+	    // grab strings of user and domain and find their length
+            $local = substr($email, 0, $atIndex);
+            $domain = substr($email, $atIndex+1);
+            $localLen = strlen($local);
+            $domainLen = strlen($domain);
 
+            // test for valid length and other invalid strings
             if ($localLen < 1 || $localLen > 64) {
-                $isValid = false;       // local part length exceeded
+                $isValid = false;
             } else if ($domainLen < 1 || $domainLen > 255) {
-                $isValid = false;       // domain part length exceeded
+                $isValid = false;
             } else if ($local[0] == '.' || $local[$localLen-1] == '.') {
-                $isValid = false;       // local part starts or ends with '.'
+		// if email starts with a period
+                $isValid = false;
             } else if (preg_match('/\\.\\./', $local)) {
-                $isValid = false;       // local part has two consecutive dots
+		// if there are two consecutive periods in user
+                $isValid = false;
             } else if (!preg_match('/^[A-Za-z0-9\\-\\.]+$/', $domain)) {
-                $isValid = false;       // character not valid in domain part
+		// if there are invalid characters
+                $isValid = false;
             } else if (preg_match('/\\.\\./', $domain)) {
-                $isValid = false;       // domain part has two consecutive dots
+		// if there are two consecutive periods in domain
+                $isValid = false;
             } else if (!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/', str_replace("\\\\","",$local))) {
+		// looking for invalid characters in user unless escaped
                 if (!preg_match('/^"(\\\\"|[^"])+"$/', str_replace("\\\\","",$local))) {
-                    $isValid = false;   // character not valid in local part unless local part is quoted
+                    $isValid = false;
                 }
             }
             
+	    // quick DNS check for domain
             if ($isValid && !(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A"))) {
-                $isValid = false;       // domain not found in DNS
+                $isValid = false;
             }
         }
-        return $isValid;        // valid email address
+
+        return $isValid;
     }
 
+    // P-R-G process
+    if(count($_POST) > 0) {
+        // get POST data, strip slashes and whitespace, and save to session variable
+        $_SESSION['name'] = Trim(stripslashes($_POST['name']));
+        $_SESSION['email'] = Trim(stripslashes($_POST['email']));
+        $_SESSION['message'] = Trim(stripslashes($_POST['message']));
 
-    if(count($_POST) > 0) {     // P-R-G process
-        $_SESSION['name'] = Trim(stripslashes($_POST['name']));     // get POSTs from form submission
-        $_SESSION['email'] = Trim(stripslashes($_POST['email']));   // strip slashes and whitespaces
-        $_SESSION['message'] = Trim(stripslashes($_POST['message']));   // save values to session
-
+	// redirect back to here
         header("HTTP/1.1 303 See Other");
-        header("Location: http://www.zachfedor.com/contact/index.php");      // redirect back to here
+        header("Location: http://www.zachfedor.com/contact/index.php");
         die();
-    } else if (isset($_SESSION['name'])) {      // if session variables are set...
-        $echoedName = $_SESSION['name'];        // save session variables to working variables
+    } else if (isset($_SESSION['name'])) {
+	// if session variables are already set, save as working variables
+        $echoedName = $_SESSION['name'];
         $echoedEmail = $_SESSION['email'];
         $echoedMessage = $_SESSION['message'];
 
-        if (!empty($echoedName) && !empty($echoedEmail) && !empty($echoedMessage)) {    // check for empty/missing inputs
-            if (validEmail($echoedEmail) == true) {     // check for valid email
-                $EmailTo = "zachfedor@gmail.com";       // set recipient
-                $Subject = "Message From Portfolio Contact Page";   // set email subject line
+	// checking for empty inputs
+        if (!empty($echoedName) && !empty($echoedEmail) && !empty($echoedMessage)) {
+	    // on valid email input, create the message
+            if (validEmail($echoedEmail) == true) {
+                $EmailTo = "zachfedor@gmail.com";
+                $Subject = "Message From Portfolio Contact Page";
 
-                $Body = "";     // prepare email body text
+		// preparing the body of the message
+                $Body = "";
                 $Body .= "Name: ";
                 $Body .= $_SESSION['name'];
                 $Body .= "\n";
@@ -78,14 +101,18 @@
                 $Body .= $_SESSION['message'];
                 $Body .= "\n";
  
-                $success = mail($EmailTo, $Subject, $Body, "From: <$Email>");       // send email
+		// and send it
+                $success = mail($EmailTo, $Subject, $Body, "From: <$Email>");
 
-                if ($success){      // on success...
-                    $alert = "<h2 class=\"contactThanks\">Thanks ".htmlspecialchars($echoedName).".<br>I'll get back to you as soon as I can!</h2>";        // print thank you message after send
-                } else {        // on fail...
-                    $alert = "<p class=\"contactError\">There seems to have been a problem sending the message. Try refreshing the page and submitting it again.</p>";  // print error message
+                if ($success) {
+	            // print thank you message after send
+                    $alert = "<h2 class=\"contactThanks\">Thanks ".htmlspecialchars($echoedName).".<br>I'll get back to you as soon as I can!</h2>";
+                } else {
+		    // print error message on fail
+                    $alert = "<p class=\"contactError\">There seems to have been a problem sending the message. Try refreshing the page and submitting it again.</p>";
                 }
 
+		// reset session
                 session_unset();
                 session_destroy();
             } else {
